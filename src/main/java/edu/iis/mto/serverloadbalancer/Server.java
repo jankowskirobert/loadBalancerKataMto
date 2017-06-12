@@ -22,8 +22,12 @@ public class Server {
 	}
 
 	public void addVm(Vm vm) {
-		currentLoadPercentage = (double) vm.size / (double) this.capacity * MAX_LOAD;
+		currentLoadPercentage = loadOfVm(vm);
 		this.vms.add(vm);
+	}
+
+	private double loadOfVm(Vm vm) {
+		return (double) vm.size / (double) this.capacity * MAX_LOAD;
 	}
 
 	public int countVms() {
@@ -33,7 +37,7 @@ public class Server {
 
 	public boolean canFit(Vm vm) {
 		// TODO Auto-generated method stub
-		return currentLoadPercentage + ((double) vm.size / (double)this.capacity * MAX_LOAD) <= MAX_LOAD;
+		return currentLoadPercentage + loadOfVm(vm) <= MAX_LOAD;
 	}
 
 }
