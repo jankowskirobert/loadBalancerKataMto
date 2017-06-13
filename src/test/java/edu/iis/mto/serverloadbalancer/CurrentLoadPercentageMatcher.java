@@ -7,11 +7,11 @@ public class CurrentLoadPercentageMatcher extends TypeSafeMatcher<Server>{
 
 	
 	
+	private static final double EPSILON = 0.01d;
 	private double expectedProcentageLoad;
 
 	public CurrentLoadPercentageMatcher(double currentLoad) {
 		this.expectedProcentageLoad = currentLoad;
-		// TODO Auto-generated constructor stub
 	}
 
 	public void describeTo(Description description) {
@@ -25,7 +25,7 @@ public class CurrentLoadPercentageMatcher extends TypeSafeMatcher<Server>{
 	}
 
 	private boolean doubleAreEqual(double d1, double d2) {
-		return d1 == d2 || Math.abs(d1 - d2) < 0.01d;
+		return d1 == d2 || Math.abs(d1 - d2) < EPSILON;
 	}
 
 }
