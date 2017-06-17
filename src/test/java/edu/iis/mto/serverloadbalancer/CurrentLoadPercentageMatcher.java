@@ -21,7 +21,7 @@ public class CurrentLoadPercentageMatcher extends TypeSafeMatcher<Server>{
 
 	@Override
 	protected boolean matchesSafely(Server item) {
-		return doubleAreEqual(item.currentProcentageLoad, expectedProcentageLoad);
+		return doubleAreEqual(item.currentPercentageLoad, expectedProcentageLoad);
 	}
 
 	private boolean doubleAreEqual(double d1, double d2) {

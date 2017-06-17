@@ -8,7 +8,7 @@ import org.hamcrest.Matcher;
 public class Server {
 
 	private static final double MAX_LOAD = 100.0d;
-	public double currentProcentageLoad = 0.0d;
+	public double currentPercentageLoad = 0.0d;
 	public double capacity;
 
 	private List<Vm> vms = new ArrayList<Vm>();
@@ -20,11 +20,11 @@ public class Server {
 
 	public boolean contain(Vm theVm) {
 		// TODO Auto-generated method stub
-		return true;
+		return vms.contains(theVm);
 	}
 
 	public void addVm(Vm vm) {
-		this.currentProcentageLoad = (double)vm.size / (double)this.capacity * MAX_LOAD;
+		this.currentPercentageLoad = (double)vm.size / (double)this.capacity * MAX_LOAD;
 		this.vms.add(vm);
 	}
 
