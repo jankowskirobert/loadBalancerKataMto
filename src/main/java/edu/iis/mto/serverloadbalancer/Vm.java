@@ -2,12 +2,15 @@ package edu.iis.mto.serverloadbalancer;
 
 public class Vm {
 
-	public double size;
+	private double size;
 
 	public Vm(double size) {
 		super();
 		this.size = size;
 	}
-	
+
+	public double getSize() {
+		return size;
+	}
 
 }
